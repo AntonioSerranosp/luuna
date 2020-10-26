@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
 import Head from 'next/head'
-import Layout from '../components/layout/Layout';
 import Link from 'next/link';
 import {useForm} from '../hooks/useForm';
 import ItemRepo from '../components/layout/ItemRepo';
@@ -17,7 +15,6 @@ const  Repositories = () => {
     
     const handleSearch = ( event ) =>{
         event.preventDefault();
-        console.log(searchValue);
         
         if(searchValue === ''){
             
@@ -37,7 +34,6 @@ const  Repositories = () => {
     }, [listItems])
     const fetchRepositories = async() =>{
         
-        console.log(`Este es el query: ${query}`);
         const url = `https://api.github.com/search/repositories?q=${query}`
         const resp  =  await fetch(url);
         const { total_count, items } = await resp.json();
@@ -77,7 +73,7 @@ const  Repositories = () => {
                             <li className="nav-item active">
                                 
                                 <a className="nav-link" href="#" style={{color:'#ffffff'}}>
-                                    <Link  href="/user-search">Usuarios</Link>
+                                    <Link  href="/user-search">Users</Link>
                                 </a>
                             </li>
                         

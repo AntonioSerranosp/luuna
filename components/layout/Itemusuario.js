@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 const ItemUsuario = (Listitem) => {
     
-    const {login, id, avatar_url, html_url} = Listitem.Listitem
-    console.log(login, id, avatar_url, html_url);
-    
-    
+    const {login, id, avatar_url, html_url} = Listitem.Listitem 
     
     return (
             

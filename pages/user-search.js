@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import Layout from '../components/layout/Layout';
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import {useForm} from '../hooks/useForm';
 import ItemUsuario from '../components/layout/Itemusuario';
@@ -16,7 +15,6 @@ const Usuarios = () => {
     
     const handleSearch = ( event ) =>{
         event.preventDefault();
-       //console.log(searchText);
        fetchUsers();
     }
     useEffect(() => {
@@ -30,8 +28,6 @@ const Usuarios = () => {
         const urlUser = `https://api.github.com/search/users?q=${query}`
         const resp  =  await fetch(urlUser);
         const { total_count, items } = await resp.json();
-        console.log(total_count);
-        console.log( items );
         setListItems(items)
     }
     
@@ -92,7 +88,6 @@ const Usuarios = () => {
                 }
                 {
                     listItems.map(Listitem =>(
-                        console.log(Listitem.id),
                        <ItemUsuario key={Listitem.id} Listitem={Listitem}/> 
                     
                     ))
