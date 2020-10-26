@@ -1,65 +1,59 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import Head from 'next/head';
+import Link from 'next/link';
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
       </Head>
+      <div>
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-light " style={{backgroundColor:'#5b7ab0'}}>
+                <a className="navbar-brand">
+                    <Link  href="/">Inicio</Link>   
+                </a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+                            <li className="nav-item active">
+                                
+                                <a className="nav-link" href="#">
+                                    <Link  href="/repositories">Repositories</Link> 
+                                </a>
+                            </li>
+                            <li className="nav-item active">
+                                
+                                <a className="nav-link" href="#">
+                                    <Link  href="/user-search">Usuarios</Link>
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+            </nav>
+            <div className="row justify-content-center my-5">
+              <img src="./luuna.png" className="img-fluid" alt="Responsive image"/>
+            </div>
+            <div className="row justify-content-center my-2 ">
+              <a href="#" className=" d-block btn btn-outline-primary  btn-lg ml-3">
+              <Link  href="/repositories">Busca repositorios</Link>   
+              
+              </a>
+              <a href="#" className=" d-block btn btn-outline-primary  btn-lg ml-3">
+                <Link  href="/user-search">Busca usuarios</Link>   
+              
+              </a>
+              
+            </div>
+            
+      </div>
+        
+  </div>
+      
     </div>
   )
 }
